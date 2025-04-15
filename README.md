@@ -1,26 +1,36 @@
-
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Портфоліо - Іван Бойко</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфоліо - Іван Бойко</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #eef2f3, #dfe9f3);
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f8f9fa;
       color: #333;
+      line-height: 1.6;
     }
 
     .container {
-      background-color: #ffffff;
-      max-width: 900px;
+      width: 100%;
+      max-width: 960px;
       margin: 40px auto;
+      background-color: #fff;
       padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      color: #333;
       animation: fadeIn 1s ease-in-out;
+      font-family: 'Playfair Display', serif;
     }
 
     @keyframes fadeIn {
@@ -33,113 +43,126 @@
     }
 
     h1 {
-      color: #2c3e50;
-      font-size: 40px;
-      margin-bottom: 10px;
       text-align: center;
-      font-weight: 700;
+      font-size: 48px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 20px;
       transition: transform 0.3s ease;
+      font-family: 'Playfair Display', serif;
     }
 
     h1:hover {
       transform: scale(1.05);
     }
 
+    .lang-switcher {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .lang-switcher button {
+      background-color: #ffd700;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin-left: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    .lang-switcher button:hover {
+      background-color: #e0a800;
+    }
+
     h2 {
-      color: #34495e;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      margin-top: 30px;
-      font-size: 24px;
+      font-size: 30px;
+      color: #1a73e8;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 8px;
+      margin-top: 40px;
+      font-weight: bold;
     }
 
     p, li {
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
 
     ul {
-      padding-left: 20px;
-    }
-
-    .footer {
-      margin-top: 50px;
-      font-style: italic;
-      color: #666;
-      text-align: center;
-      font-size: 15px;
+      list-style: none;
+      padding-left: 0;
     }
 
     .highlight {
-      background-color: #dde1f3;
+      background-color: #ffd700;
+      color: #2c3e50;
       padding: 4px 10px;
       border-radius: 5px;
       font-weight: bold;
     }
 
     .contact-info {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .contact-info p {
-      margin: 5px 0;
+      margin: 10px 0;
     }
 
     a {
-      color: #2c3e50;
-      text-decoration: underline;
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #1a73e8;
+      color: #ffd700;
     }
 
     .emoji {
-      font-size: 20px;
+      font-size: 22px;
     }
 
-    .lang-switcher {
-      text-align: right;
-      margin-bottom: 10px;
+    .footer {
+      font-style: italic;
+      color: #777;
+      text-align: center;
+      margin-top: 40px;
     }
 
-    .lang-switcher button {
-      margin-left: 10px;
-      padding: 6px 12px;
-      border-radius: 6px;
-      border: none;
-      background-color: #c7d2fe;
-      cursor: pointer;
-      font-weight: 600;
-      color: #1e3a8a;
-      transition: background-color 0.3s ease;
-    }
-
-    .lang-switcher button:hover {
-      background-color: #a5b4fc;
-    }
-
-    .lang-switcher button:focus {
-      outline: none;
-    }
-
-    @media screen and (max-width: 600px) {
+    /* Mobile responsiveness */
+    @media screen and (max-width: 768px) {
       .container {
         margin: 20px;
-        padding: 20px;
+        padding: 25px;
       }
 
       h1 {
-        font-size: 28px;
+        font-size: 36px;
       }
 
       h2 {
-        font-size: 20px;
+        font-size: 26px;
       }
 
       p, li {
-        font-size: 15px;
+        font-size: 16px;
+      }
+
+      .lang-switcher {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .lang-switcher button {
+        margin: 10px 0;
       }
     }
   </style>
