@@ -272,8 +272,6 @@
     </ul>
 
     <div class="footer">
-      <p>Муркотять завжди поруч 😺</p>
-    </div>
   </div>
 
   <div class="container" id="content-en" style="display:none;">
@@ -316,8 +314,6 @@
     </ul>
 
     <div class="footer">
-      <p>Some cool felines are always purring near me 😺</p>
-    </div>
   </div>
 
   <div class="floating-btns">
