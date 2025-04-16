@@ -6,6 +6,15 @@
   <title>Портфоліо - Іван Бойко</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-light: linear-gradient(135deg, #e3f2fd, #fceabb);
+      --bg-dark: #121212;
+      --text-light: #333;
+      --text-dark: #eee;
+      --primary: #ffd700;
+      --accent: #ff9800;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,84 +23,107 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.5s ease;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
     }
 
     .container {
-      width: 100%;
       max-width: 960px;
       margin: 40px auto;
-      background-color: #fff;
+      background: rgba(255, 255, 255, 0.95);
       padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      color: #333;
-      animation: fadeIn 1s ease-in-out;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
       font-family: 'Playfair Display', serif;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    body.dark .container {
+      background: rgba(30, 30, 30, 0.95);
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
+        transform: translateY(0);
       }
     }
 
     h1 {
       text-align: center;
       font-size: 48px;
-      font-weight: bold;
       color: #2c3e50;
       margin-bottom: 20px;
-      transition: transform 0.3s ease;
-      font-family: 'Playfair Display', serif;
+      transition: 0.3s ease;
     }
 
     h1:hover {
       transform: scale(1.05);
+      color: var(--accent);
     }
 
-    .lang-switcher {
+    .kitty {
+      text-align: center;
+      font-size: 48px;
+      animation: kittyBlink 2s infinite;
+    }
+
+    @keyframes kittyBlink {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .lang-switcher, .theme-switcher {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
       margin-bottom: 20px;
     }
 
-    .lang-switcher button {
-      background-color: #ffd700;
+    button {
+      background: linear-gradient(45deg, var(--primary), var(--accent));
       border: none;
       color: white;
       padding: 10px 20px;
-      margin-left: 15px;
-      border-radius: 8px;
-      cursor: pointer;
+      border-radius: 12px;
       font-weight: bold;
-      font-family: 'Roboto', sans-serif;
-      transition: background-color 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
     }
 
-    .lang-switcher button:hover {
-      background-color: #e0a800;
+    button:hover {
+      background: linear-gradient(45deg, var(--accent), var(--primary));
+      transform: scale(1.05);
     }
 
     h2 {
-      font-size: 30px;
-      color: #1a73e8;
-      border-bottom: 2px solid #ffd700;
+      font-size: 28px;
+      color: #1a237e;
+      border-bottom: 2px dashed var(--primary);
       padding-bottom: 8px;
-      margin-top: 40px;
-      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    body.dark h2 {
+      color: #ffc107;
     }
 
     p, li {
       font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     ul {
@@ -99,46 +131,42 @@
       padding-left: 0;
     }
 
+    ul li::before {
+      content: '⭐';
+      margin-right: 10px;
+    }
+
     .highlight {
-      background-color: #ffd700;
+      background-color: var(--primary);
       color: #2c3e50;
       padding: 4px 10px;
       border-radius: 5px;
       font-weight: bold;
     }
 
-    .contact-info {
-      margin-bottom: 30px;
-    }
-
     .contact-info p {
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     a {
-      color: #1a73e8;
-      text-decoration: none;
+      color: #1976d2;
       font-weight: bold;
-      transition: color 0.3s ease;
+      text-decoration: none;
     }
 
     a:hover {
-      color: #ffd700;
-    }
-
-    .emoji {
-      font-size: 22px;
+      color: var(--primary);
+      text-decoration: underline;
     }
 
     .footer {
+      text-align: center;
       font-style: italic;
       color: #777;
-      text-align: center;
       margin-top: 40px;
     }
 
-    /* Mobile responsiveness */
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       .container {
         margin: 20px;
         padding: 25px;
@@ -149,138 +177,127 @@
       }
 
       h2 {
-        font-size: 26px;
+        font-size: 24px;
       }
 
       p, li {
         font-size: 16px;
       }
-
-      .lang-switcher {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .lang-switcher button {
-        margin: 10px 0;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="lang-switcher">
-      <button onclick="switchLang('uk')">🇺🇦 Українська</button>
-      <button onclick="switchLang('en')">🇬🇧 English</button>
+  <div class="kitty">😺</div>
+
+  <div class="lang-switcher">
+    <button onclick="switchLang('uk')">🇺🇦 Українська</button>
+    <button onclick="switchLang('en')">🇬🇧 English</button>
+    <button onclick="toggleTheme()">🌓 Тема</button>
+  </div>
+
+  <div class="container" id="content-uk">
+    <h1>Іван Бойко</h1>
+
+    <div class="contact-info">
+      <p><span class="highlight">Професія:</span> Студент комп'ютерних наук</p>
+      <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
+      <p><span class="highlight">Телефон:</span> +380 68 791 0545</p>
     </div>
 
-    <div id="content-uk">
-      <h1>Іван Бойко</h1>
+    <h2>Про мене</h2>
+    <p>Я – мотивований студент першого курсу, навчаюсь на факультеті комп'ютерних наук у КНУБА. Цікавлюсь програмуванням, управлінням проєктами та сучасними технологіями.</p>
 
-      <div class="contact-info">
-        <p><span class="highlight">Професія:</span> Студент комп'ютерних наук</p>
-        <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
-        <p><span class="highlight">Телефон:</span> +380 68 791 0545</p>
-      </div>
+    <h2>Освіта</h2>
+    <ul>
+      <li>КНУБА (2024–2028)</li>
+      <li>Школа (2013–2024)</li>
+    </ul>
 
-      <h2>Про мене</h2>
-      <p>Я – мотивований студент першого курсу, навчаюсь на факультеті комп'ютерних наук у КНУБА. Цікавлюсь програмуванням, управлінням проєктами та сучасними технологіями. Відкритий до нових знань і завжди прагну вдосконалювати свої навички.</p>
+    <h2>Навички</h2>
+    <ul>
+      <li><strong>Мови:</strong> C++, HTML, CSS</li>
+      <li><strong>Інструменти:</strong> Git, MS Office</li>
+      <li><strong>Англійська:</strong> вище середнього</li>
+    </ul>
 
-      <h2>Освіта</h2>
-      <ul>
-        <li>Київський національний університет будівництва і архітектури (2024–2028)</li>
-        <li>Загальноосвітня школа (2013–2024)</li>
-      </ul>
+    <h2>Досвід</h2>
+    <ul>
+      <li>Участь у командних проєктах</li>
+      <li>Онлайн-курси (Coursera, Udemy)</li>
+    </ul>
 
-      <h2>Навички</h2>
-      <ul>
-        <li><strong>Мови програмування:</strong> C++, HTML, CSS</li>
-        <li><strong>Інструменти:</strong> Git, MS Office</li>
-        <li><strong>Мови:</strong> Англійська – вище середнього</li>
-      </ul>
+    <h2>Інтереси</h2>
+    <ul>
+      <li>Песики 🐶</li>
+      <li>Спорт</li>
+      <li>Рукопашний бій 🥋 <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Федерація</a></li>
+      <li>Котики 😸</li>
+    </ul>
 
-      <h2>Досвід</h2>
-      <ul>
-        <li>Участь у командних проєктах в університеті</li>
-        <li>Самостійне навчання через онлайн-курси (Coursera, Udemy)</li>
-      </ul>
+    <div class="footer">
+      <p>Муркотять завжди поруч 😺</p>
+    </div>
+  </div>
 
-      <h2>Інтереси</h2>
-      <ul>
-        <li>Домашні улюбленці (особливо песики 🐶)</li>
-        <li>Спорт та активний відпочинок</li>
-        <li>Читання технічної літератури</li>
-        <li>Рукопашний бій (КМС) – можу показати шлях руки та постояти в кібадачі 🥋<br>
-          <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Федерація рукопашного бою України</a>
-        </li>
-        <li>Колекціонування та торгівля людьми онлайн 🛍️</li>
-      </ul>
+  <div class="container" id="content-en" style="display:none;">
+    <h1>Ivan Boiko</h1>
 
-      <div class="footer">
-        <p>А ще маю файних філімонів 😸 – завжди поруч, підтримують і муркотять.</p>
-      </div>
+    <div class="contact-info">
+      <p><span class="highlight">Profession:</span> Computer Science student</p>
+      <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
+      <p><span class="highlight">Phone:</span> +380 68 791 0545</p>
     </div>
 
-    <div id="content-en" style="display:none;">
-      <h1>Ivan Boiko</h1>
+    <h2>About Me</h2>
+    <p>I’m a motivated first-year CS student at KNUCA. Interested in coding, project management, and technology.</p>
 
-      <div class="contact-info">
-        <p><span class="highlight">Profession:</span> Computer Science student</p>
-        <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
-        <p><span class="highlight">Phone:</span> +380 68 791 0545</p>
-      </div>
+    <h2>Education</h2>
+    <ul>
+      <li>KNUCA (2024–2028)</li>
+      <li>School (2013–2024)</li>
+    </ul>
 
-      <h2>About Me</h2>
-      <p>I am a motivated first-year student studying Computer Science at KNUCA. I am interested in programming, project management, and modern technologies. I am open to new knowledge and always strive to improve my skills.</p>
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> C++, HTML, CSS</li>
+      <li><strong>Tools:</strong> Git, MS Office</li>
+      <li><strong>English:</strong> Intermediate</li>
+    </ul>
 
-      <h2>Education</h2>
-      <ul>
-        <li>Kyiv National University of Construction and Architecture (2024–2028)</li>
-        <li>Secondary School (2013–2024)</li>
-      </ul>
+    <h2>Experience</h2>
+    <ul>
+      <li>Team projects at university</li>
+      <li>Self-learning via Coursera, Udemy</li>
+    </ul>
 
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Programming languages:</strong> C++, HTML, CSS</li>
-        <li><strong>Tools:</strong> Git, MS Office</li>
-        <li><strong>Languages:</strong> English – Intermediate</li>
-      </ul>
+    <h2>Interests</h2>
+    <ul>
+      <li>Dogs 🐶</li>
+      <li>Sports</li>
+      <li>Hand-to-hand combat 🥋 <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Federation</a></li>
+      <li>Cats 😸</li>
+    </ul>
 
-      <h2>Experience</h2>
-      <ul>
-        <li>Participation in university team projects</li>
-        <li>Self-learning through online courses (Coursera, Udemy)</li>
-      </ul>
-
-      <h2>Interests</h2>
-      <ul>
-        <li>Pets (especially dogs 🐶)</li>
-        <li>Sports and outdoor activities</li>
-        <li>Reading technical literature</li>
-        <li>Hand-to-hand combat (2nd degree black belt) – I can demonstrate the way of the hand and stand in Kibadachi 🥋<br>
-          <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Federation of Hand-to-Hand Combat of Ukraine</a>
-        </li>
-        <li>Collecting and trading online goods 🛍️</li>
-      </ul>
-
-      <div class="footer">
-        <p>I also have some cool felines 😸 – always around, supporting and purring.</p>
-      </div>
+    <div class="footer">
+      <p>Some cool felines are always purring near me 😺</p>
     </div>
   </div>
 
   <script>
     function switchLang(lang) {
-      const contentUk = document.getElementById('content-uk');
-      const contentEn = document.getElementById('content-en');
-      
+      const uk = document.getElementById('content-uk');
+      const en = document.getElementById('content-en');
       if (lang === 'uk') {
-        contentUk.style.display = 'block';
-        contentEn.style.display = 'none';
+        uk.style.display = 'block';
+        en.style.display = 'none';
       } else {
-        contentUk.style.display = 'none';
-        contentEn.style.display = 'block';
+        uk.style.display = 'none';
+        en.style.display = 'block';
       }
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
     }
   </script>
 </body>
