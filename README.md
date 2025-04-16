@@ -1,18 +1,20 @@
-
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфоліо - Іван Бойко</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>Іван Бойко - Портфоліо</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
-      --bg-light: linear-gradient(135deg, #e3f2fd, #fceabb);
-      --bg-dark: #121212;
-      --text-light: #333;
-      --text-dark: #eee;
-      --primary:rgb(139, 170, 36); /* Фіолетовий колір */
+      --primary-color: #8e44ad;
+      --secondary-color: #ecf0f1;
+      --bg-light: #f7f7f7;
+      --bg-dark: #2c3e50;
+      --text-light: #2c3e50;
+      --text-dark: #ecf0f1;
+      --highlight: #e74c3c;
     }
 
     * {
@@ -25,7 +27,7 @@
       font-family: 'Roboto', sans-serif;
       background: var(--bg-light);
       color: var(--text-light);
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
       scroll-behavior: smooth;
     }
 
@@ -35,73 +37,88 @@
     }
 
     .container {
-      max-width: 960px;
-      margin: 40px auto;
-      background: rgba(255, 255, 255, 0.95);
+      max-width: 1200px;
+      margin: 30px auto;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease;
-      font-family: 'Playfair Display', serif;
-      transition: background 0.5s ease, color 0.5s ease;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.5s, color 0.5s;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
     }
 
     body.dark .container {
-      background: rgba(30, 30, 30, 0.95);
+      background-color: rgba(44, 62, 80, 0.9);
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
       }
       to {
         opacity: 1;
-        transform: translateY(0);
       }
     }
 
     h1 {
       text-align: center;
-      font-size: 48px;
-      color: #2c3e50;
+      font-size: 50px;
+      color: var(--primary-color);
+      text-transform: uppercase;
       margin-bottom: 20px;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     h1:hover {
-      transform: scale(1.05);
-      color: var(--primary);
+      transform: scale(1.1);
+      color: #fff;
     }
 
-    .kitty {
+    .intro-text {
       text-align: center;
-      font-size: 48px;
-      animation: kittyBlink 2s infinite;
+      font-size: 20px;
+      margin-bottom: 40px;
+      font-weight: 500;
     }
 
-    @keyframes kittyBlink {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    .intro-text p {
+      margin-top: 10px;
+      font-size: 18px;
     }
 
-    .lang-switcher, .theme-switcher {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 20px;
+    .section-title {
+      font-size: 28px;
+      text-align: center;
+      color: var(--primary-color);
+      margin: 30px 0;
+      border-bottom: 2px dashed var(--primary-color);
+      padding-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: var(--highlight);
     }
 
     button {
-      background: var(--primary);
+      background: var(--primary-color);
       border: none;
       color: white;
       padding: 10px 20px;
       border-radius: 12px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: 0.3s ease;
     }
 
@@ -110,67 +127,39 @@
       transform: scale(1.05);
     }
 
-    h2 {
-      font-size: 28px;
-      color: #1a237e;
-      border-bottom: 2px dashed var(--primary);
-      padding-bottom: 8px;
-      margin-top: 30px;
+    /* Парallax ефект */
+    .parallax {
+      background-image: url('https://www.example.com/background.jpg');
+      min-height: 400px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
-    body.dark h2 {
-      color: #ffc107;
+    /* Чат-бот */
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4caf50;
+      border-radius: 50%;
+      color: white;
+      font-size: 30px;
+      padding: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
     }
 
-    p, li {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li::before {
-      content: '⭐';
-      margin-right: 10px;
-    }
-
-    .highlight {
-      background-color: var(--primary);
-      color: #2c3e50;
-      padding: 4px 10px;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    .contact-info p {
-      margin: 8px 0;
-    }
-
-    a {
-      color: #1976d2;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    .footer {
-      text-align: center;
-      font-style: italic;
-      color: #777;
-      margin-top: 40px;
+    .chatbot:hover {
+      background: #388e3c;
     }
 
     .floating-btns {
       position: fixed;
       bottom: 20px;
-      right: 20px;
+      right: 80px;
       z-index: 999;
       display: flex;
       flex-direction: column;
@@ -178,7 +167,7 @@
     }
 
     .floating-btns a {
-      background-color: var(--primary);
+      background-color: var(--primary-color);
       color: white;
       padding: 10px;
       border-radius: 50%;
@@ -193,17 +182,6 @@
       background-color: #7b1fa2;
     }
 
-    .social-icons {
-      font-size: 18px;
-      margin-top: 15px;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      color: #1976d2;
-      font-size: 24px;
-    }
-
     @media (max-width: 768px) {
       .container {
         margin: 20px;
@@ -214,7 +192,7 @@
         font-size: 36px;
       }
 
-      h2 {
+      .section-title {
         font-size: 24px;
       }
 
@@ -225,118 +203,49 @@
   </style>
 </head>
 <body>
-  <div class="kitty">😺</div>
 
-  <div class="lang-switcher">
-    <button onclick="switchLang('uk')">🇺🇦 Українська</button>
-    <button onclick="switchLang('en')">🇬🇧 English</button>
-    <button onclick="toggleTheme()">🌓 Тема</button>
-  </div>
+  <!-- Паралакс фон -->
+  <div class="parallax"></div>
 
-  <div class="container" id="content-uk">
+  <div class="container">
     <h1>Іван Бойко</h1>
-
-    <div class="contact-info">
-      <p><span class="highlight">Професія:</span> Студент комп'ютерних наук</p>
-      <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
-      <p><span class="highlight">Телефон:</span> +380 68 791 0545</p>
+    <div class="intro-text">
+      <p>Студент комп'ютерних наук | Програміст | Проєктний менеджер</p>
     </div>
 
-    <h2>Про мене</h2>
-    <p>Я – мотивований студент першого курсу, навчаюсь на факультеті комп'ютерних наук у КНУБА. Цікавлюсь програмуванням, управлінням проєктами та сучасними технологіями.</p>
+    <h2 class="section-title">Про мене</h2>
+    <p>Я студент першого курсу комп'ютерних наук у КНУБА. Моя мета — стати частиною інноваційного світу технологій і програмування.</p>
 
-    <h2>Освіта</h2>
+    <h2 class="section-title">Навички</h2>
     <ul>
-      <li>КНУБА (2024–2028)</li>
-      <li>Школа (2013–2024)</li>
-    </ul>
-
-    <h2>Навички</h2>
-    <ul>
-      <li><strong>Мови:</strong> C++, HTML, CSS</li>
+      <li><strong>Мови програмування:</strong> C++, HTML, CSS</li>
       <li><strong>Інструменти:</strong> Git, MS Office</li>
-      <li><strong>Англійська:</strong> вище середнього</li>
+      <li><strong>Англійська:</strong> Вільно</li>
     </ul>
 
-    <h2>Досвід</h2>
+    <h2 class="section-title">Контакти</h2>
     <ul>
-      <li>Участь у командних проєктах</li>
-      <li>Онлайн-курси (Coursera, Udemy)</li>
+      <li>Email: bivan2544@gmail.com</li>
+      <li>Телефон: +380 68 791 0545</li>
     </ul>
-
-    <h2>Інтереси</h2>
-    <ul>
-      <li>Песики 🐶</li>
-      <li>Спорт</li>
-      <li>Рукопашний бій 🥋 <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Федерація</a></li>
-    </ul>
-
-    <div class="footer">
   </div>
 
-  <div class="container" id="content-en" style="display:none;">
-    <h1>Ivan Boiko</h1>
-
-    <div class="contact-info">
-      <p><span class="highlight">Profession:</span> Computer Science student</p>
-      <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
-      <p><span class="highlight">Phone:</span> +380 68 791 0545</p>
-    </div>
-
-    <h2>About Me</h2>
-    <p>I’m a motivated first-year CS student at KNUCA. Interested in coding, project management, and technology.</p>
-
-    <h2>Education</h2>
-    <ul>
-      <li>KNUCA (2024–2028)</li>
-      <li>School (2013–2024)</li>
-    </ul>
-
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> C++, HTML, CSS</li>
-      <li><strong>Tools:</strong> Git, MS Office</li>
-      <li><strong>English:</strong> Intermediate</li>
-    </ul>
-
-    <h2>Experience</h2>
-    <ul>
-      <li>Team projects at university</li>
-      <li>Self-learning via Coursera, Udemy</li>
-    </ul>
-
-    <h2>Interests</h2>
-    <ul>
-      <li>Dogs 🐶</li>
-      <li>Sports</li>
-      <li>Hand-to-hand combat 🥋 <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Federation</a></li>
-      <li>Cats 😸</li>
-    </ul>
-
-    <div class="footer">
+  <!-- Кнопка для відкриття чат-бота -->
+  <div class="chatbot">
+    <i class="fas fa-comments"></i>
   </div>
 
   <div class="floating-btns">
-    <a href="https://www.instagram.com/boy4ik23/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/ivannboiko" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="https://www.instagram.com/boy4ik23/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.me/ivannboiko" target="_blank"><i class="fab fa-telegram"></i></a>
   </div>
 
   <script>
-    function switchLang(lang) {
-      const uk = document.getElementById('content-uk');
-      const en = document.getElementById('content-en');
-      if (lang === 'uk') {
-        uk.style.display = 'block';
-        en.style.display = 'none';
-      } else {
-        uk.style.display = 'none';
-        en.style.display = 'block';
-      }
-    }
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
+    // Чат-бот інтерактивність
+    document.querySelector('.chatbot').addEventListener('click', function() {
+      alert('Привіт! Як я можу допомогти?');
+    });
   </script>
+
 </body>
 </html>
