@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
@@ -12,8 +12,7 @@
       --bg-dark: #121212;
       --text-light: #333;
       --text-dark: #eee;
-      --primary: #ffd700;
-      --accent: #ff9800;
+      --primary: #8e24aa; /* Фіолетовий колір */
     }
 
     * {
@@ -72,7 +71,7 @@
 
     h1:hover {
       transform: scale(1.05);
-      color: var(--accent);
+      color: var(--primary);
     }
 
     .kitty {
@@ -95,7 +94,7 @@
     }
 
     button {
-      background: linear-gradient(45deg, var(--primary), var(--accent));
+      background: var(--primary);
       border: none;
       color: white;
       padding: 10px 20px;
@@ -107,7 +106,7 @@
     }
 
     button:hover {
-      background: linear-gradient(45deg, var(--accent), var(--primary));
+      background: #7b1fa2;
       transform: scale(1.05);
     }
 
@@ -191,7 +190,7 @@
 
     .floating-btns a:hover {
       transform: scale(1.1);
-      background-color: var(--accent);
+      background-color: #7b1fa2;
     }
 
     .social-icons {
@@ -322,8 +321,6 @@
   </div>
 
   <div class="floating-btns">
-    <a href="https://www.linkedin.com/in/ivan-boiko/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/ivan-boiko" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="https://www.instagram.com/boy4ik23/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     <a href="https://t.me/ivannboiko" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
   </div>
