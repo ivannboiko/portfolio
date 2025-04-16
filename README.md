@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Портфоліо - Іван Бойко</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
       --bg-light: linear-gradient(135deg, #e3f2fd, #fceabb);
@@ -26,6 +27,7 @@
       background: var(--bg-light);
       color: var(--text-light);
       transition: all 0.5s ease;
+      scroll-behavior: smooth;
     }
 
     body.dark {
@@ -166,6 +168,43 @@
       margin-top: 40px;
     }
 
+    .floating-btns {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .floating-btns a {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .floating-btns a:hover {
+      transform: scale(1.1);
+      background-color: var(--accent);
+    }
+
+    .social-icons {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #1976d2;
+      font-size: 24px;
+    }
+
     @media (max-width: 768px) {
       .container {
         margin: 20px;
@@ -231,7 +270,6 @@
       <li>Песики 🐶</li>
       <li>Спорт</li>
       <li>Рукопашний бій 🥋 <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Федерація</a></li>
-      <li>Котики 😸</li>
     </ul>
 
     <div class="footer">
@@ -281,6 +319,13 @@
     <div class="footer">
       <p>Some cool felines are always purring near me 😺</p>
     </div>
+  </div>
+
+  <div class="floating-btns">
+    <a href="https://www.linkedin.com/in/ivan-boiko/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/ivan-boiko" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/boy4ik23/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.me/ivannboiko" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
   </div>
 
   <script>
