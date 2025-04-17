@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
@@ -205,58 +205,99 @@
       font-size: 24px;
     }
 
+    /* 📱 Мобільна адаптація */
     @media (max-width: 480px) {
       html, body {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
         overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
       }
 
       .container {
-        margin: 10px;
-        padding: 20px;
-        border-radius: 16px;
-        font-size: 16px;
+        margin: 5px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: none;
+        font-size: 14px;
       }
 
       h1 {
-        font-size: 32px;
+        font-size: 24px;
+        margin-bottom: 10px;
       }
 
       h2 {
-        font-size: 20px;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
       }
 
       .kitty {
-        font-size: 36px;
+        font-size: 28px;
+        margin-bottom: 5px;
       }
 
-      .lang-switcher {
+      .lang-switcher, .theme-switcher {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
+        padding: 0 10px;
       }
 
       button {
         width: 100%;
-        font-size: 16px;
-        padding: 12px;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 8px;
       }
 
-      .contact-info p, p, li {
-        font-size: 16px;
-        line-height: 1.5;
+      p, li {
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      ul {
+        padding-left: 10px;
+      }
+
+      ul li::before {
+        content: '•';
+        margin-right: 6px;
+      }
+
+      .contact-info p {
+        margin: 5px 0;
       }
 
       .social-icons {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .social-icons a {
         font-size: 20px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        margin: 0 6px;
       }
 
       .floating-btns {
-        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        padding: 6px 0;
+        border-radius: 0;
+        background: rgba(0,0,0,0.08);
+      }
+
+      .floating-btns a {
+        font-size: 18px;
         padding: 8px;
-        gap: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   </style>
@@ -272,7 +313,6 @@
 
   <div class="container" id="content-uk">
     <h1>Іван Бойко</h1>
-
     <div class="contact-info">
       <p><span class="highlight">Професія:</span> Студент комп'ютерних наук</p>
       <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
@@ -315,7 +355,6 @@
 
   <div class="container" id="content-en" style="display:none;">
     <h1>Ivan Boiko</h1>
-
     <div class="contact-info">
       <p><span class="highlight">Profession:</span> Computer Science student</p>
       <p><span class="highlight">Email:</span> bivan2544@gmail.com</p>
