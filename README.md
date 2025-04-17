@@ -1,17 +1,18 @@
+
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Портфоліо - Іван Бойко</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <style>
     :root {
       --bg-light: linear-gradient(135deg, #e3f2fd, #fceabb);
       --bg-dark: #121212;
       --text-light: #333;
       --text-dark: #eee;
-      --primary:rgb(139, 170, 36); /* Фіолетовий колір */
+      --primary: rgb(139, 170, 36);
     }
 
     * {
@@ -26,6 +27,7 @@
       color: var(--text-light);
       transition: all 0.5s ease;
       scroll-behavior: smooth;
+      padding-bottom: 80px;
     }
 
     body.dark {
@@ -168,20 +170,26 @@
 
     .floating-btns {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 10px 0;
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      justify-content: center;
+      gap: 20px;
+      z-index: 999;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .floating-btns a {
       background-color: var(--primary);
       color: white;
-      padding: 10px;
+      padding: 12px;
       border-radius: 50%;
-      font-size: 20px;
+      font-size: 24px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
       transition: 0.3s ease;
@@ -203,22 +211,49 @@
       font-size: 24px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       .container {
-        margin: 20px;
-        padding: 25px;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 16px;
+        font-size: 16px;
       }
 
       h1 {
-        font-size: 36px;
+        font-size: 32px;
       }
 
       h2 {
-        font-size: 24px;
+        font-size: 20px;
+        text-align: center;
       }
 
-      p, li {
+      .kitty {
+        font-size: 36px;
+      }
+
+      .lang-switcher {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      button {
+        width: 100%;
         font-size: 16px;
+        padding: 12px;
+        border-radius: 14px;
+      }
+
+      .contact-info p, p, li {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -273,7 +308,6 @@
     <div class="footer">
       <p>&copy; 2025 Іван Бойко</p>
     </div>
-
   </div>
 
   <div class="container" id="content-en" style="display:none;">
@@ -318,7 +352,6 @@
     <div class="footer">
       <p>&copy; 2025 Ivan Boiko</p>
     </div>
-
   </div>
 
   <div class="floating-btns">
