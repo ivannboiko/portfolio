@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
@@ -15,19 +15,19 @@
       --primary: rgb(139, 170, 36);
     }
 
-    * {
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      overflow-x: hidden;
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+      transition: all 0.5s ease;
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
       background: var(--bg-light);
       color: var(--text-light);
-      transition: all 0.5s ease;
-      scroll-behavior: smooth;
-      padding-bottom: 80px;
     }
 
     body.dark {
@@ -52,14 +52,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
@@ -182,15 +176,15 @@
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+      touch-action: manipulation;
     }
 
     .floating-btns a {
       background-color: var(--primary);
       color: white;
-      padding: 12px;
+      padding: 10px;
       border-radius: 50%;
-      font-size: 24px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: 20px;
       text-align: center;
       transition: 0.3s ease;
     }
@@ -212,6 +206,11 @@
     }
 
     @media (max-width: 480px) {
+      html, body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+
       .container {
         margin: 10px;
         padding: 20px;
@@ -225,7 +224,6 @@
 
       h2 {
         font-size: 20px;
-        text-align: center;
       }
 
       .kitty {
@@ -241,7 +239,6 @@
         width: 100%;
         font-size: 16px;
         padding: 12px;
-        border-radius: 14px;
       }
 
       .contact-info p, p, li {
@@ -254,6 +251,12 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+      }
+
+      .floating-btns {
+        flex-wrap: wrap;
+        padding: 8px;
+        gap: 10px;
       }
     }
   </style>
@@ -339,13 +342,6 @@
     <ul>
       <li>Team projects at university</li>
       <li>Self-learning via Coursera, Udemy</li>
-    </ul>
-
-    <h2>Interests</h2>
-    <ul>
-      <li>Dogs 🐶</li>
-      <li>Sports</li>
-      <li>Hand-to-hand combat 🥋 <a href="https://www.facebook.com/HandToHandCombatFederation/" target="_blank">Federation</a></li>
       <li>Cats 😸</li>
     </ul>
 
